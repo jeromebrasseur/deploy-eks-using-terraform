@@ -1,6 +1,8 @@
 # EKS-deploy-using-Terraform
 
-<img src="https://github.com/kubernetes/kubernetes/raw/master/logo/logo.png" width="100">
+<p>
+<img src="/img/EKS-Terraform.jpg" width="50%" align="center">
+</p>
 
 ----
 
