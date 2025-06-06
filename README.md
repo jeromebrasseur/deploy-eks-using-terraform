@@ -1,8 +1,6 @@
 # EKS-deploy-using-Terraform
 
-<p>
-<img src="/img/EKS-Terraform.jpg" width="50%" align="center">
-</p>
+<p align="center"><img src="img/EKS-Terraform.jpg" width="50%"></p>
 
 ----
 
