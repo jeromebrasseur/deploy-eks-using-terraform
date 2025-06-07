@@ -1,4 +1,4 @@
-# EKS-deploy-using-Terraform
+# Deploy EKS using Terraform
 
 <p align="center"><img src="img/EKS-Terraform.jpg" width="50%"></p>
 
