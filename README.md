@@ -39,8 +39,6 @@ curl -LO "https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_
 unzip terraform_${TF_VERSION}_linux_amd64.zip
 sudo mv -f terraform /usr/local/bin/
 rm terraform_${TF_VERSION}_linux_amd64.zip
-
-terraform init
 ```
 
 ##### Connect Terraform with AWS
