@@ -26,8 +26,6 @@ unzip awscliv2.zip
 sudo ./aws/install
 rm -rf awscliv2.zip
 rm -rf aws
-
-aws configure
 ```
 
 ##### Install Terraform
