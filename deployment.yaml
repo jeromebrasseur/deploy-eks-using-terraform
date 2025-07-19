@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cicd-springboot
+  labels:
+    app: cicd-springboot
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cicd-springboot
+  template:
+    metadata:
+      labels:
+        app: cicd-springboot
+    spec:
+      containers:
+        - name: cicd-springboot
+          image: jeromebrasseur/cicdspringboot:latest
+          ports:
+            - containerPort: 8081
