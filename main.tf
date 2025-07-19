@@ -1,6 +1,5 @@
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
-  version = "20.11.0"
 
   name = "infoline-vpc"
   cidr = var.vpc_cidr
