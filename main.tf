@@ -1,5 +1,6 @@
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
+  version = "20.11.0"
 
   name = "infoline-vpc"
   cidr = var.vpc_cidr
@@ -31,6 +32,7 @@ module "vpc" {
 
 module "eks" {
   source = "terraform-aws-modules/eks/aws"
+  version = "20.11.0"
 
   cluster_name    = "infoline-eks-cluster"
   cluster_version = "1.32"
