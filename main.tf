@@ -19,14 +19,13 @@ module "vpc" {
 
   public_subnet_tags = {
     "kubernetes.io/cluster/infoline-eks-cluster" = "shared"
-    "kubernetes.io/role/elb"               = 1
+    "kubernetes.io/role/elb"                      = 1
   }
 
   private_subnet_tags = {
     "kubernetes.io/cluster/infoline-eks-cluster" = "shared"
-    "kubernetes.io/role/internal-elb"      = 1
+    "kubernetes.io/role/internal-elb"             = 1
   }
-
 }
 
 module "eks" {
@@ -51,15 +50,15 @@ module "eks" {
     }
   }
 
+  tags = {
+    Environment = "dev"
+    Terraform   = "true"
+  }
+}
+
 resource "aws_eks_access_entry" "admin_devops" {
   cluster_name      = module.eks.cluster_name
   principal_arn     = "arn:aws:iam::455768854429:user/admin-devops"
   type              = "STANDARD"
   kubernetes_groups = ["system:masters"]
-}
-
-  tags = {
-    Environment = "dev"
-    Terraform   = "true"
-  }
 }
