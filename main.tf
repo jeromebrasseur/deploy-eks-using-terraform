@@ -51,13 +51,13 @@ module "eks" {
     }
   }
 
-  map_users = [
+  map_users = {
     {
       userarn  = "arn:aws:iam::455768854429:user/admin-devops"
       username = "admin-devops"
       groups   = ["system:masters"]
     }
-  ]
+  }
 
   tags = {
     Environment = "dev"
