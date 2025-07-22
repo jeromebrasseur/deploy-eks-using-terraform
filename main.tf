@@ -31,7 +31,7 @@ module "vpc" {
 
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "20.15.4"
+  version = "20.37.2"
 
   cluster_name    = "infoline-eks-cluster"
   cluster_version = "1.32"
@@ -59,7 +59,7 @@ module "eks" {
 
 module "eks_access_entry_admin" {
   source  = "terraform-aws-modules/eks/aws//modules/eks-access-entry"
-  version = "20.15.4"
+  version = "20.37.2"
 
   cluster_name   = module.eks.cluster_name
   principal_arn  = "arn:aws:iam::455768854429:user/admin-devops"
