@@ -30,7 +30,7 @@ module "vpc" {
 }
 
 module "eks" {
-  source = "terraform-aws-modules/eks/aws"
+  source  = "terraform-aws-modules/eks/aws"
   version = "20.11.0"
 
   cluster_name    = "infoline-eks-cluster"
@@ -50,6 +50,16 @@ module "eks" {
       instance_type = ["t3.medium"]
     }
   }
+
+  map_users = [
+    {
+      userarn  = "arn:aws:iam::455768854429:user/admin-devops"
+      username = "admin-devops"
+      groups   = ["system:masters"]
+    }
+  ]
+}
+
 
   tags = {
     Environment = "dev"
