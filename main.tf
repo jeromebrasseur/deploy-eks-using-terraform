@@ -58,8 +58,6 @@ module "eks" {
       groups   = ["system:masters"]
     }
   ]
-}
-
 
   tags = {
     Environment = "dev"
