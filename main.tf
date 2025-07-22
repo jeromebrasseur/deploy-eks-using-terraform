@@ -51,13 +51,13 @@ module "eks" {
     }
   }
 
-  map_users = [
-  {
-    userarn  = "arn:aws:iam::455768854429:user/admin-devops"
-    username = "admin-devops"
-    groups   = ["system:masters"]
+  eks_access_entries = {
+    admin-devops = {
+      principal_arn = "arn:aws:iam::455768854429:user/admin-devops"
+      kubernetes_groups = ["system:masters"]
+      type = "STANDARD"
+    }
   }
-]
 
   tags = {
     Environment = "dev"
