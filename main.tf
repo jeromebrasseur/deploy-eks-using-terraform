@@ -51,17 +51,15 @@ module "eks" {
     }
   }
 
+resource "aws_eks_access_entry" "admin_devops" {
+  cluster_name      = module.eks.cluster_name
+  principal_arn     = "arn:aws:iam::455768854429:user/admin-devops"
+  type              = "STANDARD"
+  kubernetes_groups = ["system:masters"]
+}
+
   tags = {
     Environment = "dev"
     Terraform   = "true"
   }
-}
-
-module "eks_access_entry_admin" {
-  source  = "terraform-aws-modules/eks/aws//modules/eks-access-entry"
-  version = "20.37.2"
-
-  cluster_name   = module.eks.cluster_name
-  principal_arn  = "arn:aws:iam::455768854429:user/admin-devops"
-  kubernetes_groups = ["system:masters"]
 }
